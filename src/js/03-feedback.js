@@ -26,7 +26,7 @@ function onSubmit(e) {
   e.preventDefault();
   console.log({ email: email.value, message: message.value });
   if (email.value === '' || message.value === '') {
-    return alert('Please fill in all the fields!');
+    return alert('Please fill in all the fields!');}
   localStorage.removeItem(formKey);
   e.currentTarget.reset();
   formData = {};
