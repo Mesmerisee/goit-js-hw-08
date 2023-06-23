@@ -7,8 +7,8 @@ const player = new VimeoPlayer(iframe);
 
 const getTime = function (currentTime) {
   const sec = currentTime.sec;
-  localStorage.setItem(currentTimeValue, JSON.stringify(sec));
+  localStorage.setItem(currentTimeValue, sec);
 };
 player.on('timeupdate', lodashThrottle(getTime, 1000));
 
-player.setCurrentTime(JSON, parse(localStorage.getItem(currentTimeValue)));
+player.setCurrentTime(localStorage.getItem(currentTimeValue) || 0);
